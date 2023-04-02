@@ -1,18 +1,44 @@
 <template>
-    <div class="minibox">
-        <img :src="image" class="img" />
+    <div class="box">
+        <img :src="image" class="img" @click="localShowModal = true" />
+        <GalleryModal :image='image' :show='localShowModal' @close="localShowModal = false">
+
+        </GalleryModal>
     </div>
 </template>
 
 <script>
+import GalleryModal from '../galleryModal/galleryModal.vue'
 export default {
     name: 'BigGallery',
+    components: {
+        GalleryModal
+    },
     props: {
-        image:{
+        image: {
             typeof: String,
             default: () => ''
+        },
+        showModal: {
+            typeof: Boolean,
+            default: false
         }
-    }
+    },
+    data() {
+        return {
+            localShowModal: this.showModal,
+        };
+    },
+    methods: {
+        openModal() {
+            this.localShowModal = true;
+        }
+    },
+    watch: {
+        showModal(newValue) {
+            this.localShowModal = newValue;
+        },
+    },
 }
 </script>
 
@@ -23,7 +49,7 @@ export default {
     width: 100%;
 }
 
-.box{
+.box {
     display: flex;
     margin: auto;
     max-width: 60%;
@@ -32,7 +58,7 @@ export default {
     min-height: 60%;
 }
 
-.minibox{
+.minibox {
     display: flex;
     margin: auto;
     max-width: 5%;
@@ -40,5 +66,4 @@ export default {
     max-height: 5%;
     min-height: 5%;
 }
-
 </style>
