@@ -52,10 +52,10 @@ export default {
 .box {
     display: flex;
     margin: auto;
-    max-width: 60%;
-    min-width: 60%;
-    max-height: 60%;
-    min-height: 60%;
+    max-width: 20%;
+    min-width: 20%;
+    max-height: 20%;
+    min-height: 20%;
 }
 
 .minibox {

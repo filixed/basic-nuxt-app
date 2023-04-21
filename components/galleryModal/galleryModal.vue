@@ -9,7 +9,7 @@
                         <img :src="image" class="img" />
                     </div>
                     <div>
-                        <ImageArray></ImageArray>
+                        <ImageArray :items="localImages"></ImageArray>
                     </div>
             </div>
         </div>
@@ -17,8 +17,8 @@
 </template>
   
 <script>
-import {ImageArray} from '../imageArray/imageArray.vue'
-import { images } from '../models/galleryImage.js'
+import ImageArray from '../imageArray/imageArray.vue'
+import ModelsGalleryImage from '../models/galleryImage.js'
 export default {
     name: "GalleryModal",
     components: {
@@ -36,18 +36,20 @@ export default {
         image: {
             type: String,
             default: () => ''
-        }
+        },
+    },
+    data() {
+        return {
+            localImages: ModelsGalleryImage,
+        };
     },
     methods: {
         closeModal() {
             this.$emit("close");
         },
     },
-    data(){
-        return{
-            localData: images
-        }
-    },
+    
+    
 };
 </script>
   
@@ -67,7 +69,7 @@ export default {
 
 .modal-container {
     background-color: #fff;
-    max-width: 600px;
+    max-width: 1000px;
     width: 100%;
     max-height: 100vh;
     overflow-y: auto;

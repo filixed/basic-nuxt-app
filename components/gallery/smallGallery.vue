@@ -21,14 +21,15 @@ export default {
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 100%;
 }
 
 .minibox {
     display: flex;
     margin: auto;
-    max-width: 5%;
-    min-width: 5%;
-    max-height: 5%;
-    min-height: 5%;
+    max-width: 25%;
+    min-width: 25%;
+    max-height: 25%;
+    min-height: 25%;
 }
 </style>
