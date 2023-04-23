@@ -6,6 +6,9 @@
         <span>
             <NuxtLink class="link" to="/aboutus">AboutUs</NuxtLink>
         </span>
+        <span>
+            <NuxtLink class="link" to="/nasa">Nasa</NuxtLink>
+        </span>
     </div>
 </template>
 
@@ -21,22 +24,26 @@ export default {
     /* flex-direction: column; */
     height: 100%;
     width: 100%;
-    max-height: 200;
-    min-height: 200;
+    justify-content: center;
+    align-items: center;
+    max-height: 50px;
+    min-height: 50px;
     background: lightgoldenrodyellow;
+    border-bottom: 2px solid black;
 }
 
 .item2 {
-    display: block;
+    display: flex;
     width: 100%;
-    text-align: right;
+
 }
 
 .item2 .link{
     margin-right: 10px;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 24px;
     color: #333;
+    padding: 50px;
     text-decoration: none;
 }
 

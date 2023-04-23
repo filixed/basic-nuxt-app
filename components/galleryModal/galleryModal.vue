@@ -6,11 +6,11 @@
             </div>
             <div class="modal-body">
                     <div class="box">
-                        <img :src="image" class="img" />
+                        <slot></slot>
                     </div>
-                    <div>
+                    <!-- <div>
                         <ImageArray :items="localImages"></ImageArray>
-                    </div>
+                    </div> -->
             </div>
         </div>
     </div>
@@ -40,16 +40,19 @@ export default {
     },
     data() {
         return {
-            localImages: ModelsGalleryImage,
+            
         };
     },
     methods: {
         closeModal() {
-            this.$emit("close");
-        },
-    },
-    
-    
+                const data = {
+                    state: false,
+                    content: null,
+                }
+                this.$nuxt.$emit("closeModal", data);
+            }
+        },  
+        
 };
 </script>
   

@@ -1,6 +1,5 @@
 <template>
     <div>
-        <Header></Header>
         <h1>About Us</h1>
         <h2>web</h2>
         <button @click="showInfo">Click me</button>
